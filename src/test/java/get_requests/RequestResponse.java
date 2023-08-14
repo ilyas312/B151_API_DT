@@ -24,10 +24,15 @@ public class RequestResponse {
               4- Do assertion(Doğrulama yap)
      */
 
+     // 1- Set the URL (URl'i tanımla)
+     // 2- Set the expected data(Beklenen dataları ayarla)
+     // 3- Send the request and get the response(İsteği gönder ve cevabı al)
+     // 4- Do assertion(Doğrulama yap)
+
 
     public static void main(String[] args) {
         //Get testi nasıl yapılır
-        String url="https://petstore.swagger.io/v2/pet/12345987";
+        String url="https://petstore.swagger.io/v2/pet/3435";
         Response response=given().when().get(url);
         //response.prettyPrint();
 
