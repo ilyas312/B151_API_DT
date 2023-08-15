@@ -1,6 +1,6 @@
 package get_requests;
 
-import base_urls.HerOkuuappBaseUrl;
+import base_urls.HerOkuAppBaseUrl;
 import io.restassured.response.Response;
 import org.junit.Test;
 
@@ -10,7 +10,7 @@ import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertTrue;
 
-public class Get05 extends HerOkuuappBaseUrl {
+public class Get05 extends HerOkuAppBaseUrl {
 
     /*
     Given

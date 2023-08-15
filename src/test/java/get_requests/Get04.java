@@ -1,13 +1,13 @@
 package get_requests;
 
-import base_urls.JsonplaceholderBaseUrl;
+import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
-public class Get04 extends JsonplaceholderBaseUrl {
+public class Get04 extends JsonPlaceHolderBaseUrl {
     /*
    Given  https://jsonplaceholder.typicode.com/todos
    When   I send a GET request to the Url
