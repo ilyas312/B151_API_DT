@@ -94,7 +94,25 @@ public class Get09 extends HerOkuAppBaseUrl {
 
         //Set expected data
         Map<String, String> bookingMap = new HerOkuAppTestData().bookingDateMapper("2018-01-01", "2019-01-01");
-        new HerOkuAppTestData().expectedDataMapper("Jane", "Doe", 111, true, bookingMap, "Extra pillows please");
+       Map<String,Object> expectedDataMap= new HerOkuAppTestData().expectedDataMapper("Josh", "Allen", 111, true, bookingMap, "midnight snack");
+
+        //Send req and res
+        Response response = given(spec).when().get("{first}/{second}");
+        response.prettyPrint();
+
+        //Do assertion
+        Map<String, Object> actualDataMap = response.as(HashMap.class);
+        System.out.println("actualData = " + actualDataMap);
+
+        assertEquals(expectedDataMap.get("firstname"), actualDataMap.get("firstname"));
+        assertEquals(expectedDataMap.get("lastname"), actualDataMap.get("lastname"));
+        assertEquals(expectedDataMap.get("totalprice"), actualDataMap.get("totalprice"));
+        assertEquals(expectedDataMap.get("depositpaid"), actualDataMap.get("depositpaid"));
+        assertEquals(expectedDataMap.get("additionalneeds"), actualDataMap.get("additionalneeds"));
+        // assertEquals(((Map)expectedDataMap.get("bookingdates")).get("checkin"),((Map)actualDataMap.get("bookingdates")).get("bookingdates"));
+        assertEquals(bookingMap.get("checkin"), ((Map) actualDataMap.get("bookingdates")).get("checkin"));
+        assertEquals(bookingMap.get("checkout"), ((Map) actualDataMap.get("bookingdates")).get("checkout"));
+
 
     }
 }
