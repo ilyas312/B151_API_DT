@@ -1,5 +1,9 @@
-package pojos;
+package pojos.gmiBankPojos;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.junit.Ignore;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class StatePojos {
     private Integer id;
     private String name;
